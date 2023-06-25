@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Navigation from "./Components/Navigation";
+import Home from "./Components/Home";
+import Login from "./Components/Login";
+import Leaderboard from "./Components/Leaderboard";
+import QuestionForm from "./Components/QuestionForm";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { handleInitialData } from "./store/actions/shared";
+import Question from "./Components/Question";
 
 function App() {
+  const authedUser = useSelector((state) => state.authedUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(handleInitialData());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {authedUser === null ? "" : <Navigation />}
+      <Routes>
+        <Route path="/" Component={Login} />
+        <Route path="/dashboard" Component={Home} />
+        <Route path="/leaderboard" Component={Leaderboard} />
+        <Route path="/add" Component={QuestionForm} />
+        <Route path="/question/:id" Component={Question} />
+      </Routes>
     </div>
   );
 }
