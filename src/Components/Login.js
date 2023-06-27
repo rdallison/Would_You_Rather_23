@@ -26,6 +26,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (value === null || value === "") return;
     dispatch(setAuthedUser(value));
     setIsLogged(true);
   };
@@ -52,7 +53,7 @@ function Login() {
           <button onClick={(e) => handleSubmit(e)}>Login</button>
         </div>
       )}
-      {isLogged && value && <Navigate to="/dashboard" />}
+      {isLogged && value !== null && <Navigate to="/dashboard" />}
     </div>
   );
 }

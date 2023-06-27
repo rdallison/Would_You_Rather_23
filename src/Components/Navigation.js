@@ -19,7 +19,7 @@ function Navigation() {
       <Link to="/dashboard">Home</Link>
       <Link to="/add">New Question</Link>
       <Link to="/leaderboard">Leaderboard</Link>
-      <div>Hello, {authedUser === null ? "" : users[authedUser].name} </div>
+      <div>Hello, {authedUser === null ? "" : users?.[authedUser].name} </div>
       <button onClick={handleSubmit}>Logout</button>
     </div>
   );
