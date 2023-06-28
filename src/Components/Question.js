@@ -18,6 +18,7 @@ function Question() {
   const oneVotes = question.optionOne.votes.length;
   const twoVotes = question.optionTwo.votes.length;
   const totalVotes = oneVotes + twoVotes;
+  console.log(id);
 
   const content = users[authedUser].answers[qid] ? (
     <div>
