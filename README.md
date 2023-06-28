@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+To start the program please run the following lines of code in your terminal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npm install
+npm start
 
-## Available Scripts
+Running the above code will bring you to the homepage of the program which is localhost:3000
 
-In the project directory, you can run:
+When you arrive at the homepage, you will have to login before navigating to any of the pages of the app. Please select the desired user from the user dropdown list. Once you have selected a user, you can click login and it will take you to the dashboard for your desired user.
 
-### `npm start`
+While at the dashboard, you can choose between viewing the unanswered questions vs the answered questions. For all the questions that have been answered, you will be able to view the results of the poll and the answer that was picked for the currently logged in user.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can navigate to the New Question form where you can create your own question. When a new question is created, you will be redirected back to the dashboard where you will see the newly asked quetion at the top of the unanswered list. It will appear at the top of the list because the list is sorted with the newest questions at the top of the list.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can also navigate to the leaderboard. The leaderboard is listed with all of the created users. They are sorted by the user with the highest score. The score is creatd by combining the number of questions asked as well as the number of questions answered. As you ask more questions and answer more questions, you will see the score grow.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You also have an option to logout of the app. Logging out of the app will remove an authed user and you will have to login again as another user.

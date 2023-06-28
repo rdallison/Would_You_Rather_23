@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { setAuthedUser } from "../store/actions/authedUser";
+import { useLocation } from "react-router-dom";
 
 function Login() {
+  const { state } = useLocation();
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
@@ -53,7 +55,9 @@ function Login() {
           <button onClick={(e) => handleSubmit(e)}>Login</button>
         </div>
       )}
-      {isLogged && value !== null && <Navigate to="/dashboard" />}
+      {isLogged && value !== null && (
+        <Navigate to={state ? `/${state.toLowerCase()}` : "/dashboard"} />
+      )}
     </div>
   );
 }

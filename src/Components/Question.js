@@ -33,7 +33,11 @@ function Question() {
       >
         <p>{question.optionOne.text}</p>
         <p>
-          {oneVotes} out of {totalVotes} votes
+          {oneVotes} out of {totalVotes} votes{" "}
+          {oneVotes / totalVotes === 1
+            ? 100
+            : Math.floor((oneVotes / totalVotes) * 100)}
+          %
         </p>
       </div>
       <div
@@ -45,7 +49,11 @@ function Question() {
       >
         <p>{question.optionTwo.text}</p>
         <p>
-          {twoVotes} out of {totalVotes} votes
+          {twoVotes} out of {totalVotes} votes{" "}
+          {twoVotes / totalVotes === 1
+            ? 100
+            : Math.floor((twoVotes / totalVotes) * 100)}
+          %
         </p>
       </div>
     </div>

@@ -7,7 +7,7 @@ function Leaderboard() {
 
   return (
     <div>
-      {authedUser === null ? <Navigate to="/" /> : ""}
+      {/* {authedUser === null ? <Navigate to="/" /> : ""} */}
       <ul>
         {Object.keys(users)
           .map((username) => users[username])

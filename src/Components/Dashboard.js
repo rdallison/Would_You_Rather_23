@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import QuestionList from "./QuestionList";
 
-function Home() {
+function Dashboard() {
   const [questionType, setQuestionType] = useState("unanswered");
   const authedUser = useSelector((state) => state.authedUser);
   const users = useSelector((state) => state.users);
@@ -15,8 +15,7 @@ function Home() {
       ? Object.keys(user.answers).map((answerID) => questions[answerID])
       : Object.keys(questions)
           .filter((questionID) => !user.answers[questionID])
-          .map((questionID) => questions[questionID])
-          .sort((a, b) => b.timestamp - a.timestamp);
+          .map((questionID) => questions[questionID]);
 
   const handleAnswered = () => {
     setQuestionType("answered");
@@ -40,14 +39,16 @@ function Home() {
         Answered
       </button>
       <ul>
-        {filteredQuestions.map((question) => (
-          <li key={question.id}>
-            <QuestionList id={question.id} />
-          </li>
-        ))}
+        {filteredQuestions
+          .sort((a, b) => b.timestamp - a.timestamp)
+          .map((question) => (
+            <li key={question.id}>
+              <QuestionList id={question.id} />
+            </li>
+          ))}
       </ul>
     </div>
   );
 }
 
-export default Home;
+export default Dashboard;

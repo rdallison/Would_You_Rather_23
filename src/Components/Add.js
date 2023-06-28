@@ -6,7 +6,7 @@ import { userNewQuestion } from "../store/actions/users";
 import { formatQuestion } from "../_Data";
 import { Navigate } from "react-router-dom";
 
-function QuestionForm() {
+function Add() {
   const dispatch = useDispatch();
   const authedUser = useSelector((state) => state.authedUser);
   const users = useSelector((state) => state.users);
@@ -40,7 +40,7 @@ function QuestionForm() {
   return (
     <div>
       {toHome && <Navigate to="/dashboard" />}
-      {authedUser === null ? <Navigate to="/" /> : ""}
+      {/* {authedUser === null ? <Navigate to="/" /> : ""} */}
       <div>
         <h2>Create New Question</h2>
         <h5>Would you rather ...</h5>
@@ -65,4 +65,4 @@ function QuestionForm() {
   );
 }
 
-export default QuestionForm;
+export default Add;

@@ -30,7 +30,7 @@ function QuestionList({ id }) {
         </p>
         <Link
           to={{
-            pathname: `/question/${question.id}`,
+            pathname: `/questions/${question.id}`,
             state: question,
           }}
         >
